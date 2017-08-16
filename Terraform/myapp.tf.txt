@@ -1,0 +1,10 @@
+# Configure the AWS Provider
+provider "aws" {
+    access_key = "${KIAIQTAGU7H5I4WJ2YQ.aws_access_key}"
+    secret_key = "${sFIQbjjXSHS4Leittl0zPRlWK1tju6iEVPGf+SXk.aws_secret_key}"
+    region = "us-east-1"
+}
+
+resource "aws_vpc" "myapp" {
+     cidr_block = "10.100.0.0/16"
+}
