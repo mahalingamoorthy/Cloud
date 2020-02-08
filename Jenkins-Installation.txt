@@ -1,0 +1,37 @@
+<<How to install jenkins on AWS EC2 linux>>
+
+URL: << http://bhargavamin.com/how-to-do/install-jenkins-on-amazon-linux-aws/>>
+
+sudo su - or ec2-user is also ok
+
+ec2-user >> add sudo infornt of the ec2-user
+
+Setup java:
+------------
+sudo yum install -y git  java-1.8.0-openjdk-devel aws-cli
+sudo alternatives --config java
+
+Maven installation:
+--------------------
+sudo wget http://repos.fedorapeople.org/repos/dchen/apache-maven/epel-apache-maven.repo -O /etc/yum.repos.d/epel-apache-maven.repo
+sudo sed -i s/\$releasever/6/g /etc/yum.repos.d/epel-apache-maven.repo
+sudo yum install -y apache-maven
+mvn –v
+
+Install Jenkins:
+---------------- 
+sudo wget -O /etc/yum.repos.d/jenkins.repo http://pkg.jenkins-ci.org/redhat/jenkins.repo
+sudo rpm --import http://pkg.jenkins-ci.org/redhat/jenkins-ci.org.key 
+sudo yum install jenkins
+sudo service jenkins start
+--Add the service in the startup mode
+sudo chkconfig --add jenkins
+--Access the jenkins using the below url
+http://<instance ip>:8080
+--Reset the password
+Login password : /var/lib/jenkins/secrets/initialAdminPassword 
+
+
+
+
+
