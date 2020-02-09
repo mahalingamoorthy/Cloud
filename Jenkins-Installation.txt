@@ -31,8 +31,11 @@ http://<instance ip>:8080
 --Reset the password
 Login password : /var/lib/jenkins/secrets/initialAdminPassword 
 
---Jenkins installation and configuration on docker
+--How to mount the /var/lib/jenkins directory on AWS EFS
+sudo mount -t nfs4 -o nfsvers=4.1,rsize=1048576,wsize=1048576,hard,timeo=600,retrans=2 fs-03e5b3c8.efs.eu-west-1.amazonaws.com:/ jenkins
+fs-03e5b3c8.efs.eu-west-1.amazonaws.com >> AWS efs dns Name
 
+--Jenkins installation and configuration on docker
 https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/#prerequisites
 
 
