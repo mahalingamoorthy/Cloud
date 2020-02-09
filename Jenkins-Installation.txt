@@ -1,4 +1,4 @@
-<<How to install jenkins on AWS EC2 linux>>
+﻿<<How to install jenkins on AWS EC2 linux>>
 
 URL: << http://bhargavamin.com/how-to-do/install-jenkins-on-amazon-linux-aws/>>
 
@@ -31,6 +31,9 @@ http://<instance ip>:8080
 --Reset the password
 Login password : /var/lib/jenkins/secrets/initialAdminPassword 
 
+--Jenkins installation and configuration on docker
+
+https://jenkins.io/doc/tutorials/build-a-java-app-with-maven/#prerequisites
 
 
 
